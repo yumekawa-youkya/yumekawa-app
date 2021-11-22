@@ -13,8 +13,8 @@
 export default {
   props: {
     id: 1,
-    question: "",
-    answer: "",
+    question: "質問",
+    answer: "陽キャ",
     youkyado: 0,
   },
   methods: {},
