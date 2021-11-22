@@ -9,6 +9,23 @@
   </div>
 </template>
 
+<script>
+export default {
+  date() {
+    return {
+      question: [
+        {
+          id: 1,
+          question: "",
+          answer: "",
+          youkyado: 0,
+        },
+      ],
+    }
+  },
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
