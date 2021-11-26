@@ -13,20 +13,16 @@
 
 <script>
 export default {
+  props: {
+    questions: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {}
   },
   methods: {},
-  props: {
-    question: [
-      {
-        id: 1,
-        question: "",
-        answer: "",
-        youkyado: 0,
-      },
-    ],
-  },
   computed: {
     Totalyoukado: function () {
       let youkyado
