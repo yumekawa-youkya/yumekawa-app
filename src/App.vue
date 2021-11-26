@@ -4,19 +4,18 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/select">Select</router-link> |
       <router-link to="/result">Result</router-link>
-      <Select v-on:new="questions = $event" />
     </div>
-    <router-view />
+    <router-view v-on:new="questions = $event" v-bind:question="questions[0]" />
   </div>
 </template>
 
 <script>
 import Result from "./views/Result.vue"
-import Select from "./views/Select.vue"
+
 export default {
   data() {
     return {
-      components: { Result, Select },
+      components: { Result },
       questions: [
         {
           id: 1,
