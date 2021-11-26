@@ -2,19 +2,21 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/select">Select</router-link>
+      <router-link to="/select">Select</router-link> |
       <router-link to="/result">Result</router-link>
-      <Question v-on:new="questions = $event" />
+      <Select v-on:new="questions = $event" />
     </div>
     <router-view />
   </div>
 </template>
 
 <script>
-import Question from "src/views/Select.vue"
+import Result from "./views/Result.vue"
+import Select from "./views/Select.vue"
 export default {
-  date() {
+  data() {
     return {
+      components: { Result, Select },
       questions: [
         {
           id: 1,
@@ -25,9 +27,6 @@ export default {
           youkyado: 0,
         },
       ],
-    }
-    components: {
-      Question
     }
   },
   methods: {},
