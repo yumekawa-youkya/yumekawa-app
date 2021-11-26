@@ -17,15 +17,16 @@ export default {
     return {}
   },
   methods: {},
-  //props: {},
-  question: [
-    {
-      id: 1,
-      question: "",
-      answer: "",
-      youkyado: 0,
-    },
-  ],
+  props: {
+    question: [
+      {
+        id: 1,
+        question: "",
+        answer: "",
+        youkyado: 0,
+      },
+    ],
+  },
   computed: {
     Totalyoukado: function () {
       let youkyado
