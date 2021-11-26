@@ -1,5 +1,10 @@
 <template>
-  <div></div>
+  <div>
+    <div>
+       <router-link to="/about">Select</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
 
 <script>
