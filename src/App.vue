@@ -5,7 +5,7 @@
       <router-link to="/select">Select</router-link> |
       <router-link to="/result">Result</router-link>
     </div>
-    <router-view v-on:new="questions = $event" v-bind:question="questions[0]" />
+    <router-view v-on:new="questions = $event" v-bind:questions="questions" />
   </div>
 </template>
 

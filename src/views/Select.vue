@@ -1,37 +1,31 @@
 <template>
   <div>
-    <div>{{ question.text }}</div>
-    <button v-on:click="send">{{ question.answer1 }}</button>
-    <button v-on:click="send">{{ question.answer2 }}</button>
-    <button v-on:click="send">{{ question.answer3 }}</button>
+    <div>{{ questions[0].text }}</div>
+    <button v-on:click="send">{{ questions[0].answer1 }}</button>
+    <button v-on:click="send">{{ questions[0].answer2 }}</button>
+    <button v-on:click="send">{{ questions[0].answer3 }}</button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    question: {
-      type: Object,
+    questions: {
+      type: Array,
       required: true,
     },
   },
   data() {
     return {
-      question2: [
-        {
-          id: 2,
-          text: "question",
-          answer1: "1",
-          answer2: "2",
-          answer3: "3",
-          youkyado: 0,
-        },
-      ],
+      tempQuestions: this.questions,
     }
   },
   methods: {
+    // ボタンを押した時にquestionsを変更する関数
+    answer: function () {},
+    // App.vueを変更する関数
     send() {
-      this.$emit("new", this.question2)
+      this.$emit("new", this.tempQuestions)
     },
   },
 }
