@@ -2,7 +2,7 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 import Index from "../views/Index.vue"
 import Select from "../views/Select.vue"
-// import Result from "../views/Result.vue"
+import Result from "../views/Result.vue"
 
 Vue.use(VueRouter)
 
@@ -13,9 +13,14 @@ const routes = [
     component: Index,
   },
   {
-    path: "/about",
+    path: "/select",
     name: "Select",
     component: Select,
+  },
+  {
+    path: "/result",
+    name: "Result",
+    component: Result,
   },
 ]
 

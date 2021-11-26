@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/select">Select</router-link>
+      <router-link to="/select">Select</router-link> |
       <router-link to="/result">Result</router-link>
     </div>
     <router-view />
@@ -10,9 +10,11 @@
 </template>
 
 <script>
+import Result from "./views/Result.vue"
 export default {
-  date() {
+  data() {
     return {
+      components: { Result },
       question: [
         {
           id: 1,

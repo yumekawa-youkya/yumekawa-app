@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: {
+  question: {
     id: 1,
     question: "質問",
     answer: "陽キャ",
