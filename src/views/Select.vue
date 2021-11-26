@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div>{{ questions[0].text }}</div>
-    <button v-on:click="send">{{ questions[0].answer1 }}</button>
-    <button v-on:click="send">{{ questions[0].answer2 }}</button>
-    <button v-on:click="send">{{ questions[0].answer3 }}</button>
+    <div v-for="(question, index) in questions" v-bind:key="index">
+      <div>{{ question.text }}</div>
+      <button v-on:click="send">{{ question.answer1 }}</button>
+      <button v-on:click="send">{{ question.answer2 }}</button>
+      <button v-on:click="send">{{ question.answer3 }}</button>
+    </div>
   </div>
 </template>
 
