@@ -1,9 +1,8 @@
 <template>
   <div>
     <div>
-       <router-link to="/about">Select</router-link>
+      <router-link to="/select">Select</router-link>
     </div>
-    <router-view />
   </div>
 </template>
 
