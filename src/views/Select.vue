@@ -1,8 +1,9 @@
 <template>
   <div>
     <div v-for="(question, index) in questions" v-bind:key="index">
+      <div></div>
       <div>{{ question.text }}</div>
-      <button v-on:click="send(question.answer1)">
+      <button v-on:click="Answer(index)">
         {{ question.answer1 }}
       </button>
       <button v-on:click="send(question.answer2)">
@@ -30,10 +31,13 @@ export default {
     }
   },
   methods: {
+    Answer(index):{
+      this.tempQuestions[index].selected=true,
+      send()
+    },
     // App.vueを変更する、解答を保存する関数
-    send: function (answer) {
+    send: function () {
       this.$emit("new", this.tempQuestions)
-      this.answerQuestion = answer
     },
   },
 }
