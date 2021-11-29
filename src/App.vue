@@ -10,12 +10,9 @@
 </template>
 
 <script>
-import Result from "./views/Result.vue"
-
 export default {
   data() {
     return {
-      components: { Result },
       questions: [
         {
           id: 1,
