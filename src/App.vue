@@ -15,33 +15,67 @@ export default {
     return {
       questions: [
         {
-          question1: {
-            text: "きめせく",
-            id: 1,
-            selected: false,
-            answer1: "きめせくきもちえええ",
-            answer2: "きめせくさいこおおお",
-            answer3: "きめせくやべええええ",
-            youkyado: 0,
-          },
-          question2: {
-            id: 2,
-            text: "きめせく",
-            selected: false,
-            answer1: "きめせくきもちえええ",
-            answer2: "きめせくさいこおおお",
-            answer3: "きめせくやべええええ",
-            youkyado: 0,
-          },
-          question3: {
-            id: 3,
-            text: "きめせく",
-            selected: false,
-            answer1: "きめせくきもちえええ",
-            answer2: "きめせくさいこおおお",
-            answer3: "きめせくやべええええ",
-            youkyado: 0,
-          },
+          id: 1,
+          question: "カレーとうんちの見分けはつく?",
+          answer: [
+            {
+              text: "はい",
+              selected: false,
+              rate: 50, // 陽キャ度
+            },
+            {
+              text: "いいえ",
+              selected: false,
+              rate: 25, // 陽キャ度
+            },
+            {
+              text: "どっちでもない",
+              selected: false,
+              rate: 10, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 2,
+          question: "カレーとうんちの見分けはつく?",
+          answer: [
+            {
+              text: "はい",
+              selected: false,
+              rate: 50, // 陽キャ度
+            },
+            {
+              text: "いいえ",
+              selected: false,
+              rate: 25, // 陽キャ度
+            },
+            {
+              text: "どっちでもない",
+              selected: false,
+              rate: 10, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 3,
+          question: "カレーとうんちの見分けはつく?",
+          answer: [
+            {
+              text: "はい",
+              selected: false,
+              rate: 50, // 陽キャ度
+            },
+            {
+              text: "いいえ",
+              selected: false,
+              rate: 25, // 陽キャ度
+            },
+            {
+              text: "どっちでもない",
+              selected: false,
+              rate: 10, // 陽キャ度
+            },
+          ],
         },
       ],
     }
