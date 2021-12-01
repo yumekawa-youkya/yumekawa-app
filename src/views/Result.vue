@@ -17,10 +17,18 @@
     <div v-else-if="this.totalYoukyado <= 10" class="result">
       完全なる陽キャ！
     </div>
+    <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
+    <input type="text" class="inputText" v-model="inputName" /><input
+      type="button"
+      value="追加"
+      class="addButton"
+      v-on:click="rankingButton"
+    />
   </div>
 </template>
 
 <script>
+import firebase from "firebase"
 export default {
   props: {
     questions: {
@@ -29,9 +37,21 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      inputName: "",
+    }
   },
-  methods: {},
+  methods: {
+    rankingButton: function () {
+      const timeStamp = firebase.firestore.Timestamp.now()
+      const data = {
+        name: this.inputName,
+        youkyado: this.totalYoukyado,
+        timestamp: timeStamp.toDate(),
+      }
+      firebase.firestore().collection("ranking").doc("doc1").set(data)
+    },
+  },
   computed: {
     totalYoukyado: function () {
       let youkyadoCmp = 0
@@ -55,28 +75,31 @@ export default {
 }
 .resultComment {
   padding: 20px;
-  float: left;
+  text-align: left;
   font-family: "Times New Roman";
   font-size: 20px;
+  background-color: lightblue;
 }
 .Youkyado {
-  padding: 20px;
+  padding-bottom: 40px;
   height: 15rem;
   font-family: "Times New Roman";
-  font-size: 50px;
+  font-size: 17rem;
   font-weight: bold;
-  text-align: center;
-  background-color: turquoise;
+  background-color: lightblue;
 }
 .bunmatsu {
   padding: 20px;
   text-align: right;
   font-family: "Times New Roman";
   font-size: 20px;
-  background-color: turquoise;
+  background-color: lightblue;
 }
 .result {
-  height: 50px;
+  height: 70px;
+  padding-top: 30px;
+  font-size: 20px;
+  color: white;
   background-color: steelblue;
   text-align: center;
   font-family: "Times New Roman";
