@@ -1,16 +1,21 @@
 <template>
   <div>
     <div v-for="(question, index) in questions" v-bind:key="index">
-      <div>{{ question.text }}</div>
-      <button v-on:click="send(question.answer1)">
-        {{ question.answer1 }}
-      </button>
-      <button v-on:click="send(question.answer2)">
-        {{ question.answer2 }}
-      </button>
-      <button v-on:click="send(question.answer3)">
-        {{ question.answer3 }}
-      </button>
+      <div>{{ question.question }}</div>
+      <div class="btns">
+        <button class="btn1" v-on:click="Answer(index, 0)">
+          {{ question.answer[0].text }}
+        </button>
+        <button class="btn2" v-on:click="Answer(index, 1)">
+          {{ question.answer[1].text }}
+        </button>
+        <button class="btn3" v-on:click="Answer(index, 2)">
+          {{ question.answer[2].text }}
+        </button>
+      </div>
+    </div>
+    <div class="result">
+      <router-link to="/result">診断結果</router-link>
     </div>
   </div>
 </template>
@@ -26,15 +31,61 @@ export default {
   data() {
     return {
       tempQuestions: this.questions,
-      answerQuestion: "",
+      total: 0,
     }
   },
   methods: {
-    // App.vueを変更する、解答を保存する関数
-    send: function (answer) {
+    send: function () {
       this.$emit("new", this.tempQuestions)
-      this.answerQuestion = answer
     },
+
+    Answer: function (id, num) {
+      this.questions[id].answer[num].selected = true
+      this.send()
+    },
+    // App.vueを変更する、解答を保存する関数
   },
 }
 </script>
+
+<style scoped>
+.btn1 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #fff;
+  border-top: 4px solid #48ecc4;
+  border-right: 4px solid #0a5f4a;
+  border-bottom: 4px solid #0f745b;
+  border-left: 4px solid #8cf9de;
+  border-radius: 0;
+  background: #11a37f;
+}
+.btn2 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #fff;
+  border-top: 4px solid #48ecc4;
+  border-right: 4px solid #0a5f4a;
+  border-bottom: 4px solid #0f745b;
+  border-left: 4px solid #8cf9de;
+  border-radius: 0;
+  background: #11a37f;
+}
+.btn3 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: #fff;
+  border-top: 4px solid #48ecc4;
+  border-right: 4px solid #0a5f4a;
+  border-bottom: 4px solid #0f745b;
+  border-left: 4px solid #8cf9de;
+  border-radius: 0;
+  background: #11a37f;
+}
+</style>
