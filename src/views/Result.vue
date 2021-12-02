@@ -43,11 +43,10 @@ export default {
   },
   methods: {
     rankingButton: function () {
-      const timeStamp = firebase.firestore.Timestamp.now()
       const data = {
         name: this.inputName,
         youkyado: this.totalYoukyado,
-        timestamp: timeStamp.toDate(),
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       }
       firebase.firestore().collection("ranking").doc("doc1").set(data)
     },
