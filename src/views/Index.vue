@@ -5,9 +5,9 @@
       <router-link to="/select" class="title">診断スタート</router-link>
     </div>
     <div class="images">
-    <img class="image1" src="https://2.bp.blogspot.com/-moNfsHKQYck/V2vYUVZES8I/AAAAAAAA79c/BPXgiQqVYjMI3tQ-81LynIjOv80xs42FgCLcB/s800/seijinshiki_pipeisu_furyou.png">
-    <img class="image2" src="https://1.bp.blogspot.com/-WiADgvcPe74/W9RZLB-o0GI/AAAAAAABPm8/lhcQ7Q8UDEQQTSZ7GyqKLpVpxF325PIdQCLcBGAs/s800/mild_yankee_dqn.png">
-    <img class="image3" src="https://3.bp.blogspot.com/-AYN4R2QzQRA/WWXXEbefCwI/AAAAAAABFfE/GSis1305dZ8aXy7zSYT4Zj2dnrzcY7HlwCLcBGAs/s800/mizutabako_sheesha.png">
+    <img class="image1" src="../assets/seijin.png">
+    <img class="image2" src="../assets/mild.png">
+    <img class="image3" src="../assets/sheesha.png">
     </div>
   </div>
 </template>
@@ -23,11 +23,11 @@ export default {
 
 <style scoped>
 .test {
-  font-size: 70px;
+  font-size: 100px;
   font-family: 'HGP行書体';
   /* margin-top: 10px; */
   margin-bottom: 50px;
-  padding-top: 50px;
+  padding-top: 40px;
   color: rgb(152, 8, 219);
 }
 .image {
@@ -54,11 +54,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  /* margin-bottom: 20px; */
+  margin-top: 60px;
 }
 .general {
-  background-image: url(https://1.bp.blogspot.com/-jDerrxr3URQ/XpKjRZJ8DUI/AAAAAAABYVs/u6GYcJxP4DoYvoxbpgtTLOasi7DMyY5cwCNcBGAsYHQ/s1600/dance_night_club.png);
+  background-image: url('../assets/club.png');
   height: 800px;
   width: auto;
   background-repeat: no-repeat;
