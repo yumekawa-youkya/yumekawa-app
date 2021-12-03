@@ -22,12 +22,16 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap');
+
+
 .test {
-  font-size: 100px;
-  font-family: 'HGP行書体';
+  font-size: 80px;
+  font-family: 'Kaisei Decol', serif;
   /* margin-top: 10px; */
   margin-bottom: 50px;
-  padding-top: 40px;
+  padding-top: 30px;
   color: rgb(152, 8, 219);
 }
 .image {
@@ -37,8 +41,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 80px;
-  font-family: 'HGP行書体';
+  font-size: 67px;
+  font-family: 'DotGothic16', sans-serif;
   color: rgb(241, 241, 241);
   background-color: #000000;
   border-radius: 50vh;
