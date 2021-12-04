@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>{{ this.$route.params.id }}</div>
     <div v-for="(question, index) in questions" v-bind:key="index">
       <div>{{ question.question }}</div>
       <div class="btns">
@@ -28,12 +29,14 @@ export default {
       required: true,
     },
   },
+
   data() {
     return {
       tempQuestions: this.questions,
       total: 0,
     }
   },
+
   methods: {
     send: function () {
       this.$emit("new", this.tempQuestions)
@@ -42,6 +45,9 @@ export default {
     Answer: function (id, num) {
       this.questions[id].answer[num].selected = true
       this.send()
+      if (id === this.questions.length - 1) {
+        this.$router.push("/result")
+      }
     },
     // App.vueを変更する、解答を保存する関数
   },

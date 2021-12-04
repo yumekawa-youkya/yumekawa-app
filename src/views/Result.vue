@@ -34,6 +34,11 @@
         人生がさぞ楽しいことでしょう。その楽しさをぜひ皆に分け与えてください。
       </div>
     </div>
+    <div class="restart">
+      <button v-on:click="youkyadoreset()">
+        <router-link to="/select">もう一度診断する</router-link>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -48,7 +53,21 @@ export default {
   data() {
     return {}
   },
-  methods: {},
+  methods: {
+    youkyadoreset: function () {
+      for (let i = 0; i < this.questions.length; i++) {
+        if (this.questions[i].answer[0].selected === true) {
+          this.questions[i].answer[0].selected = false
+        }
+        if (this.questions[i].answer[1].selected === true) {
+          this.questions[i].answer[1].selected = false
+        }
+        if (this.questions[i].answer[2].selected === true) {
+          this.questions[i].answer[2].selected = false
+        }
+      }
+    },
+  },
   computed: {
     totalYoukyado: function () {
       let youkyadoCmp = 0
@@ -116,5 +135,11 @@ export default {
   color: black;
   text-align: center;
   font-size: 30px;
+}
+.restart {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>
