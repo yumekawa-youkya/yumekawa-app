@@ -4,18 +4,35 @@
     <div class="resultComment">あなたの陽キャ度は...</div>
     <div class="Youkyado">{{ totalYoukyado }}</div>
     <div class="bunmatsu">です！！！</div>
-    <div v-if="this.totalYoukyado <= 2" class="result">ほとんど陰キャ！</div>
-    <div v-else-if="this.totalYoukyado <= 4" class="result">
+    <div v-if="this.totalYoukyado <= 20" class="result">
+      ほとんど陰キャ！
+      <div class="sentence">
+        あなたはもう救いようのない陰キャです。あきらめましょう。
+      </div>
+    </div>
+    <div v-else-if="this.totalYoukyado <= 40" class="result">
       ちょっと陽キャ！
+      <div class="sentence">
+        あなたはまだまだ陽キャとはほど遠い存在です。精進しましょう。
+      </div>
     </div>
-    <div v-else-if="this.totalYoukyado <= 6" class="result">
+    <div v-else-if="this.totalYoukyado <= 60" class="result">
       まあまあ陽キャ！
+      <div class="sentence">
+        あなたは言っても平凡です。何もかもが普通でつまらないでしょう。
+      </div>
     </div>
-    <div v-else-if="this.totalYoukyado <= 8" class="result">
+    <div v-else-if="this.totalYoukyado <= 80" class="result">
       かなりの陽キャ！
+      <div class="sentence">
+        完全なる陽キャにギリギリなれない惜しい人です。中途半端はやめましょう。
+      </div>
     </div>
-    <div v-else-if="this.totalYoukyado <= 10" class="result">
+    <div v-else-if="this.totalYoukyado > 80" class="result">
       完全なる陽キャ！
+      <div class="sentence">
+        人生がさぞ楽しいことでしょう。その楽しさをぜひ皆に分け与えてください。
+      </div>
     </div>
     <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
     <input type="text" class="inputText" v-model="inputName" /><input
@@ -56,7 +73,15 @@ export default {
     totalYoukyado: function () {
       let youkyadoCmp = 0
       for (let i = 0; i < this.questions.length; i++) {
-        youkyadoCmp += this.questions[i].youkyado
+        if (this.questions[i].answer[0].selected === true) {
+          youkyadoCmp += this.questions[i].answer[0].rate
+        }
+        if (this.questions[i].answer[1].selected === true) {
+          youkyadoCmp += this.questions[i].answer[1].rate
+        }
+        if (this.questions[i].answer[2].selected === true) {
+          youkyadoCmp += this.questions[i].answer[2].rate
+        }
       }
       return youkyadoCmp
     },
@@ -74,6 +99,8 @@ export default {
   font-weight: bold;
 }
 .resultComment {
+  display: flex;
+  align-items: left;
   padding: 20px;
   text-align: left;
   font-family: "Times New Roman";
@@ -85,6 +112,18 @@ export default {
   height: 15rem;
   font-family: "Times New Roman";
   font-size: 17rem;
+  font-family: "Times New Roman";
+  font-size: 20px;
+  background-color: turquoise;
+}
+.Youkyado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 15rem;
+  font-family: "Times New Roman";
+  font-size: 200px;
   font-weight: bold;
   background-color: lightblue;
 }
@@ -101,7 +140,15 @@ export default {
   font-size: 20px;
   color: white;
   background-color: steelblue;
+  height: 50px;
+  color: red;
   text-align: center;
   font-family: "Times New Roman";
+  font-size: 5em;
+}
+.sentence {
+  color: black;
+  text-align: center;
+  font-size: 30px;
 }
 </style>
