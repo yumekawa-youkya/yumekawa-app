@@ -48,7 +48,8 @@ export default {
         youkyado: this.totalYoukyado,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       }
-      firebase.firestore().collection("ranking").doc("doc1").set(data)
+      firebase.firestore().collection("ranking").add(data)
+      this.inputName = ""
     },
   },
   computed: {
