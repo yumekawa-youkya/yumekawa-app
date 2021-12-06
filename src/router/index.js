@@ -13,7 +13,7 @@ const routes = [
     component: Index,
   },
   {
-    path: "/select",
+    path: "/select/:id",
     name: "Select",
     component: Select,
   },
