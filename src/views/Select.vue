@@ -1,22 +1,23 @@
 <template>
   <div>
-    <div>{{ this.$route.params.id }}</div>
     <div v-for="(question, index) in questions" v-bind:key="index">
-      <div>{{ question.question }}</div>
-      <div class="btns">
-        <button class="btn1" v-on:click="Answer(index, 0)">
-          {{ question.answer[0].text }}
-        </button>
-        <button class="btn2" v-on:click="Answer(index, 1)">
-          {{ question.answer[1].text }}
-        </button>
-        <button class="btn3" v-on:click="Answer(index, 2)">
-          {{ question.answer[2].text }}
-        </button>
+      <div v-if="question.id == $route.params.id">
+        <div class="question">
+          <span>Question{{ Number($route.params.id) + 1 }}</span>
+          <div class="Text">{{ question.question }}</div>
+        </div>
+        <div class="btns">
+          <button class="btn1" v-on:click="Answer(index, 0)">
+            {{ question.answer[0].text }}
+          </button>
+          <button class="btn2" v-on:click="Answer(index, 1)">
+            {{ question.answer[1].text }}
+          </button>
+          <button class="btn3" v-on:click="Answer(index, 2)">
+            {{ question.answer[2].text }}
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="result">
-      <router-link to="/result">診断結果</router-link>
     </div>
   </div>
 </template>
@@ -45,12 +46,19 @@ export default {
     Answer: function (id, num) {
       this.questions[id].answer[num].selected = true
       this.send()
-      if (id === this.questions.length - 1) {
+      if (this.pageId === this.questions.length - 1) {
         this.$router.push("/result")
+      } else {
+        this.$router.push("/select/" + (this.pageId + 1))
       }
     },
-    // App.vueを変更する、解答を保存する関数
   },
+  computed: {
+    pageId() {
+      return Number(this.$route.params.id)
+    },
+  },
+  // App.vueを変更する、解答を保存する関数
 }
 </script>
 
@@ -60,6 +68,19 @@ export default {
   margin-bottom: 30px;
   margin-right: 10px;
   margin-left: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
   color: #fff;
   border-top: 4px solid #48ecc4;
   border-right: 4px solid #0a5f4a;
@@ -67,12 +88,33 @@ export default {
   border-left: 4px solid #8cf9de;
   border-radius: 0;
   background: #11a37f;
+}
+
+.btn1:hover {
+  color: #fff;
+  border-top: 4px solid #0f745b;
+  border-right: 4px solid #8cf9de;
+  border-bottom: 4px solid #48ecc4;
+  border-left: 4px solid #0a5f4a;
 }
 .btn2 {
   margin-top: 15px;
   margin-bottom: 30px;
   margin-right: 10px;
   margin-left: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
   color: #fff;
   border-top: 4px solid #48ecc4;
   border-right: 4px solid #0a5f4a;
@@ -81,11 +123,33 @@ export default {
   border-radius: 0;
   background: #11a37f;
 }
+
+.btn2:hover {
+  color: #fff;
+  border-top: 4px solid #0f745b;
+  border-right: 4px solid #8cf9de;
+  border-bottom: 4px solid #48ecc4;
+  border-left: 4px solid #0a5f4a;
+}
+
 .btn3 {
   margin-top: 15px;
   margin-bottom: 30px;
   margin-right: 10px;
   margin-left: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
   color: #fff;
   border-top: 4px solid #48ecc4;
   border-right: 4px solid #0a5f4a;
@@ -93,5 +157,13 @@ export default {
   border-left: 4px solid #8cf9de;
   border-radius: 0;
   background: #11a37f;
+}
+
+.btn3:hover {
+  color: #fff;
+  border-top: 4px solid #0f745b;
+  border-right: 4px solid #8cf9de;
+  border-bottom: 4px solid #48ecc4;
+  border-left: 4px solid #0a5f4a;
 }
 </style>

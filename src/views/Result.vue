@@ -36,8 +36,10 @@
         人生がさぞ楽しいことでしょう。その楽しさをぜひ皆に分け与えてください。
       </div>
     </div>
-    <div>
-        <router-link to="/select" class="restart">もう一度診断する</router-link>
+    <div class="restart">
+      <button v-on:click="youkyadoreset()">
+        <router-link to="/select/0">もう一度診断する</router-link>
+      </button>
     </div>
   <div class="ranking">
     <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
