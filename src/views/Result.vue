@@ -36,13 +36,21 @@
     </div>
     <div class="restart">
       <button v-on:click="youkyadoreset()">
-        <router-link to="/select">もう一度診断する</router-link>
+        <router-link to="/select/0">もう一度診断する</router-link>
       </button>
     </div>
+    <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
+    <input type="text" class="inputText" v-model="inputName" /><input
+      type="button"
+      value="追加"
+      class="addButton"
+      v-on:click="rankingButton"
+    />
   </div>
 </template>
 
 <script>
+import firebase from "firebase"
 export default {
   props: {
     questions: {
@@ -51,9 +59,20 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      inputName: "",
+    }
   },
   methods: {
+    rankingButton: function () {
+      const data = {
+        name: this.inputName,
+        youkyado: this.totalYoukyado,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      }
+      firebase.firestore().collection("ranking").add(data)
+      this.inputName = ""
+    },
     youkyadoreset: function () {
       for (let i = 0; i < this.questions.length; i++) {
         if (this.questions[i].answer[0].selected === true) {
@@ -101,10 +120,21 @@ export default {
   display: flex;
   align-items: left;
   padding: 20px;
+  text-align: left;
+  font-family: "Times New Roman";
+  font-size: 20px;
+  background-color: lightblue;
+}
+.Youkyado {
+  padding-bottom: 40px;
+  height: 15rem;
+  font-family: "Times New Roman";
+  font-size: 17rem;
   font-family: "Times New Roman";
   font-size: 20px;
   background-color: turquoise;
 }
+
 .Youkyado {
   display: flex;
   align-items: center;
@@ -114,17 +144,22 @@ export default {
   font-family: "Times New Roman";
   font-size: 200px;
   font-weight: bold;
-  text-align: center;
-  background-color: turquoise;
+  background-color: lightblue;
 }
+
 .bunmatsu {
   padding: 20px;
   text-align: right;
   font-family: "Times New Roman";
   font-size: 20px;
-  background-color: turquoise;
+  background-color: lightblue;
 }
 .result {
+  height: 70px;
+  padding-top: 30px;
+  font-size: 20px;
+  color: white;
+  background-color: steelblue;
   height: 50px;
   color: red;
   text-align: center;
