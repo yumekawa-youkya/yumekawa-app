@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div class="resultTitle">〜結果発表〜</div>
+    <div class="top">
+    <div class="resultTitle">Result</div>
     <div class="resultComment">あなたの陽キャ度は...</div>
     <div class="Youkyado">{{ totalYoukyado }}</div>
     <div class="bunmatsu">です！！！</div>
+    </div>
     <div v-if="this.totalYoukyado <= 20" class="result">
       ほとんど陰キャ！
       <div class="sentence">
@@ -39,6 +41,7 @@
         <router-link to="/select/0">もう一度診断する</router-link>
       </button>
     </div>
+  <div class="ranking">
     <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
     <input type="text" class="inputText" v-model="inputName" /><input
       type="button"
@@ -46,6 +49,7 @@
       class="addButton"
       v-on:click="rankingButton"
     />
+  </div>
   </div>
 </template>
 
@@ -108,73 +112,84 @@ export default {
 </script>
 
 <style scoped>
+.top {
+  background: -moz-linear-gradient(#ffb03c, #7d0c8b);
+  background: -webkit-linear-gradient(#ffb03c, #ff708d);
+  background: linear-gradient(to right, #ffb03c, #ff708d);
+  border-radius: 10vh;
+}
 .resultTitle {
-  background-color: skyblue;
-  height: 70px;
-  font-family: "Times New Roman";
+  color: #FFF;
+  height: 20px;
+  font-family: 'Kaisei Decol', serif;
   padding-top: 30px;
-  font-size: 20px;
+  font-size: 40px;
   font-weight: bold;
 }
 .resultComment {
   display: flex;
   align-items: left;
-  padding: 20px;
+  padding: 40px;
   text-align: left;
-  font-family: "Times New Roman";
-  font-size: 20px;
-  background-color: lightblue;
+  font-family: 'Kaisei Decol', serif;
+  font-size: 30px;
+  color: #FFF;
 }
 .Youkyado {
   padding-bottom: 40px;
-  height: 15rem;
-  font-family: "Times New Roman";
-  font-size: 17rem;
-  font-family: "Times New Roman";
-  font-size: 20px;
-  background-color: turquoise;
-}
-
-.Youkyado {
+  height: 10rem;
+  color: #FFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  height: 15rem;
-  font-family: "Times New Roman";
+  font-family: 'Rampart One', cursive;
   font-size: 200px;
   font-weight: bold;
-  background-color: lightblue;
 }
-
 .bunmatsu {
-  padding: 20px;
+  padding: 40px;
   text-align: right;
-  font-family: "Times New Roman";
-  font-size: 20px;
-  background-color: lightblue;
+  font-family: 'Kaisei Decol', serif;
+  font-size: 30px;
+  color: #FFF;
 }
 .result {
-  height: 70px;
+  height: 180px;
+  margin: 20px;
   padding-top: 30px;
-  font-size: 20px;
-  color: white;
-  background-color: steelblue;
-  height: 50px;
+  font-size: 50px;
   color: red;
   text-align: center;
-  font-family: "Times New Roman";
-  font-size: 5em;
+  font-family: 'Kaisei Decol', serif;
+  border: solid 9px #000000;
 }
 .sentence {
   color: black;
   text-align: center;
   font-size: 30px;
+  font-family: 'Kaisei Decol', serif;
 }
 .restart {
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 790px;
+  right: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-family: 'DotGothic16', sans-serif;
+  color: gold;
+  background-color:rgb(104, 86, 86);
+  border-radius: 50vh;
+  height: 5rem;
+  width: 20rem;
+  transition: 0.2s;
+}
+.restart:hover {
+  color:rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+.ranking {
+
 }
 </style>
