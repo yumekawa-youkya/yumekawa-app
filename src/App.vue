@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/select">Select</router-link> |
-      <router-link to="/result">Result</router-link>
+      <router-link to="/result">Result</router-link> |
+      <router-link to="/ranking">Ranking</router-link>
     </div>
     <router-view v-on:new="questions = $event" v-bind:questions="questions" />
   </div>

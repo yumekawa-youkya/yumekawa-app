@@ -3,6 +3,7 @@ import VueRouter from "vue-router"
 import Index from "../views/Index.vue"
 import Select from "../views/Select.vue"
 import Result from "../views/Result.vue"
+import Ranking from "../views/Ranking.vue"
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,12 @@ const routes = [
     path: "/result",
     name: "Result",
     component: Result,
+  },
+
+  {
+    path: "/ranking",
+    name: "Ranking",
+    component: Ranking,
   },
 ]
 
