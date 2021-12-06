@@ -23,6 +23,7 @@ export default {
     firebase
       .firestore()
       .collection("ranking")
+      .orderBy("youkyado", "desc")
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
@@ -33,7 +34,6 @@ export default {
         })
       })
   },
-  computed: {},
 }
 </script>
 
