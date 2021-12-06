@@ -34,6 +34,11 @@
         人生がさぞ楽しいことでしょう。その楽しさをぜひ皆に分け与えてください。
       </div>
     </div>
+    <div class="restart">
+      <button v-on:click="youkyadoreset()">
+        <router-link to="/select">もう一度診断する</router-link>
+      </button>
+    </div>
     <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
     <input type="text" class="inputText" v-model="inputName" /><input
       type="button"
@@ -67,6 +72,19 @@ export default {
       }
       firebase.firestore().collection("ranking").add(data)
       this.inputName = ""
+    },
+    youkyadoreset: function () {
+      for (let i = 0; i < this.questions.length; i++) {
+        if (this.questions[i].answer[0].selected === true) {
+          this.questions[i].answer[0].selected = false
+        }
+        if (this.questions[i].answer[1].selected === true) {
+          this.questions[i].answer[1].selected = false
+        }
+        if (this.questions[i].answer[2].selected === true) {
+          this.questions[i].answer[2].selected = false
+        }
+      }
     },
   },
   computed: {
@@ -116,6 +134,7 @@ export default {
   font-size: 20px;
   background-color: turquoise;
 }
+
 .Youkyado {
   display: flex;
   align-items: center;
@@ -127,6 +146,7 @@ export default {
   font-weight: bold;
   background-color: lightblue;
 }
+
 .bunmatsu {
   padding: 20px;
   text-align: right;
@@ -150,5 +170,11 @@ export default {
   color: black;
   text-align: center;
   font-size: 30px;
+}
+.restart {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>

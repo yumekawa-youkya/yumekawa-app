@@ -16,6 +16,27 @@ export default {
     return {
       questions: [
         {
+          id: 0,
+          question: "カレーとうんちの見分けはつく?",
+          answer: [
+            {
+              text: "はい",
+              selected: false,
+              rate: 50, // 陽キャ度
+            },
+            {
+              text: "いいえ",
+              selected: false,
+              rate: 25, // 陽キャ度
+            },
+            {
+              text: "どっちでもない",
+              selected: false,
+              rate: 10, // 陽キャ度
+            },
+          ],
+        },
+        {
           id: 1,
           question: "カレーとうんちの見分けはつく?",
           answer: [
@@ -38,27 +59,6 @@ export default {
         },
         {
           id: 2,
-          question: "カレーとうんちの見分けはつく?",
-          answer: [
-            {
-              text: "はい",
-              selected: false,
-              rate: 50, // 陽キャ度
-            },
-            {
-              text: "いいえ",
-              selected: false,
-              rate: 25, // 陽キャ度
-            },
-            {
-              text: "どっちでもない",
-              selected: false,
-              rate: 10, // 陽キャ度
-            },
-          ],
-        },
-        {
-          id: 3,
           question: "カレーとうんちの見分けはつく?",
           answer: [
             {
