@@ -24,8 +24,8 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&family=Yuji+Mai&display=swap');
 .test {
   font-size: 80px;
   font-family: 'Kaisei Decol', serif;
@@ -34,16 +34,13 @@ export default {
   padding-top: 30px;
   color: rgb(152, 8, 219);
 }
-.image {
-
-}
 .title {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 67px;
   font-family: 'DotGothic16', sans-serif;
-  color: rgb(241, 241, 241);
+  color:goldenrod;
   background-color: #000000;
   border-radius: 50vh;
   height: 10vh;
@@ -51,8 +48,8 @@ export default {
   transition: 0.3s;
 }
 .title:hover {
-  background-color:rgb(243, 243, 243);
-  color: black;
+  background-color:rgb(255, 31, 31);
+  color: rgb(255, 255, 255);
 }
 .main {
   display: flex;
@@ -61,7 +58,7 @@ export default {
   margin-top: 60px;
 }
 .general {
-  background-image: url('../assets/club.png');
+  background-image: url("../assets/club.png");
   height: 800px;
   width: auto;
   background-repeat: no-repeat;
