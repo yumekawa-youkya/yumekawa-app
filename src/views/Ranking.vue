@@ -3,7 +3,7 @@
     <div>〜陽キャ度ランキング〜</div>
     <div>
       <p v-for="ranking in rankings" :key="ranking.id">
-        {{ ranking.name }}>>>{{ ranking.youkyado }}
+        : {{ ranking.name }}>>>{{ ranking.youkyado }}
       </p>
     </div>
   </div>
@@ -24,6 +24,7 @@ export default {
       .firestore()
       .collection("ranking")
       .orderBy("youkyado", "desc")
+      .limit(10)
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
