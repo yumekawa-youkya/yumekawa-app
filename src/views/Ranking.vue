@@ -1,14 +1,14 @@
 <template>
   <div class="app">
-    <div>〜陽キャ度ランキング〜</div>
+    <div class="title">〜陽キャ度ランキング〜</div>
     <div>
-      <div class="rank">
+      <div class="rank1">
         1位 : {{ rankings[0].name }}>>>{{ rankings[0].youkyado }}
       </div>
-      <div class="rank">
+      <div class="rank2">
         2位 : {{ rankings[1].name }}>>>{{ rankings[1].youkyado }}
       </div>
-      <div class="rank">
+      <div class="rank3">
         3位 : {{ rankings[2].name }}>>>{{ rankings[2].youkyado }}
       </div>
       <div class="rank">
@@ -127,10 +127,56 @@ export default {
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
 }
+.title {
+  font-size: 80px;
+  font-family: "Kaisei Decol", serif;
+}
+.rank1 {
+  position: relative;
+  display: center;
+  height: 70px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  background-color: gold;
+}
+.rank2 {
+  height: 60px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  background-color: silver;
+}
+.rank3 {
+  height: 50px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  background-color: #c47222;
 .rank {
   margin: 20px;
+  height: 40px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Kaisei Decol", serif;
+  font-weight: bold;
+  background-color: #f0d0b6;
 }
 .youkyado {
   margin: 20px;
+  height: 40px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Kaisei Decol", serif;
+  font-weight: bold;
+  background-color: skyblue;
 }
 </style>
