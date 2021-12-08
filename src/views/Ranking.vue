@@ -35,6 +35,11 @@
     </div>
     <div>あなたの得点</div>
     <div class="youkyado">{{ this.totalYoukyado }}</div>
+    <div class="home">
+      <button class="homeButton" v-on:click="youkyadoreset()">
+        <router-link to="/index">ホームに戻る</router-link>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -53,7 +58,21 @@ export default {
       required: true,
     },
   },
-  methods: {},
+  methods: {
+    youkyadoreset: function () {
+      for (let i = 0; i < this.questions.length; i++) {
+        if (this.questions[i].answer[0].selected === true) {
+          this.questions[i].answer[0].selected = false
+        }
+        if (this.questions[i].answer[1].selected === true) {
+          this.questions[i].answer[1].selected = false
+        }
+        if (this.questions[i].answer[2].selected === true) {
+          this.questions[i].answer[2].selected = false
+        }
+      }
+    },
+  },
   created() {
     firebase
       .firestore()
@@ -91,6 +110,23 @@ export default {
 </script>
 
 <style scoped>
+.homeButton {
+  margin: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-family: "DotGothic16", sans-serif;
+  color: gold;
+  background-color: rgb(104, 86, 86);
+  border-radius: 50vh;
+  height: 5rem;
+  width: 15rem;
+  transition: 0.2s;
+}
+.homeButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
 .rank {
   margin: 20px;
 }
