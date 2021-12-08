@@ -34,6 +34,8 @@
         10位 : {{ rankings[9].name }}>>>{{ rankings[9].youkyado }}
       </div>
     </div>
+    <div>あなたの得点</div>
+    <div>{{ myScore.name }}>>>{{ myScore.youkyado }}</div>
   </div>
 </template>
 
@@ -44,6 +46,7 @@ export default {
   data() {
     return {
       rankings: [],
+      myScore: [],
     }
   },
   methods: {},
@@ -51,17 +54,31 @@ export default {
     firebase
       .firestore()
       .collection("ranking")
-      .orderBy("youkyado", "desc")
-      .limit(10)
+      .orderBy("createdAt", "desc")
+      .limit(1)
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
-          this.rankings.push({
+          this.myScore.push({
             id: doc.id,
             ...doc.data(),
           })
         })
-      })
+      }),
+      firebase
+        .firestore()
+        .collection("ranking")
+        .orderBy("youkyado", "desc")
+        .limit(10)
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((doc) => {
+            this.rankings.push({
+              id: doc.id,
+              ...doc.data(),
+            })
+          })
+        })
   },
 }
 </script>
