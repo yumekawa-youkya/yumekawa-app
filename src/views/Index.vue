@@ -2,12 +2,12 @@
   <div class="general">
     <div class="test">卍陽キャ度診断テスト卍</div>
     <div class="main">
-      <router-link to="/select" class="title">診断スタート</router-link>
+      <router-link to="/select/0" class="title">診断スタート</router-link>
     </div>
     <div class="images">
-    <img class="image1" src="../assets/seijin.png">
-    <img class="image2" src="../assets/mild.png">
-    <img class="image3" src="../assets/sheesha.png">
+      <img class="image1" src="../assets/seijin.png" />
+      <img class="image2" src="../assets/mild.png" />
+      <img class="image3" src="../assets/sheesha.png" />
     </div>
   </div>
 </template>
@@ -22,21 +22,24 @@ export default {
 </script>
 
 <style scoped>
+
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&family=Yuji+Mai&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap");
 
 
 .test {
   font-size: 80px;
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
   /* margin-top: 10px; */
   margin-bottom: 50px;
   padding-top: 30px;
   color: rgb(152, 8, 219);
 }
-.image {
 
-}
 .title {
   display: flex;
   align-items: center;
@@ -51,8 +54,8 @@ export default {
   transition: 0.3s;
 }
 .title:hover {
-  background-color:rgb(243, 243, 243);
-  color: black;
+  background-color:rgb(255, 31, 31);
+  color: rgb(255, 255, 255);
 }
 .main {
   display: flex;
@@ -61,7 +64,7 @@ export default {
   margin-top: 60px;
 }
 .general {
-  background-image: url('../assets/club.png');
+  background-image: url("../assets/club.png");
   height: 800px;
   width: auto;
   background-repeat: no-repeat;

@@ -17,20 +17,20 @@ export default {
       questions: [
         {
           id: 0,
-          question: '集合写真の立ち位置はどうする？',
+          question: "集合写真の立ち位置はどうする？",
           answer: [
             {
-              text: '中央と両隅以外',
+              text: "中央と両隅以外",
               selected: false,
               rate: 0, // 陽キャ度
             },
             {
-              text: '両隅らへん',
+              text: "両隅らへん",
               selected: false,
               rate: 15, // 陽キャ度
             },
             {
-              text: '後列の中央',
+              text: "後列の中央",
               selected: false,
               rate: 30, // 陽キャ度
             },
@@ -38,20 +38,20 @@ export default {
         },
         {
           id: 1,
-          question: 'ものを選ぶときに何を基準にする？',
+          question: "ものを選ぶときに何を基準にする？",
           answer: [
             {
-              text: 'デザイン',
+              text: "デザイン",
               selected: false,
               rate: 30, // 陽キャ度
             },
             {
-              text: '機能性',
+              text: "機能性",
               selected: false,
               rate: 0, // 陽キャ度
             },
             {
-              text: 'レビュー',
+              text: "レビュー",
               selected: false,
               rate: 15, // 陽キャ度
             },
@@ -59,20 +59,20 @@ export default {
         },
         {
           id: 2,
-          question: '好きな食べ物は？',
+          question: "好きな食べ物は？",
           answer: [
             {
-              text: 'ラーメン',
+              text: "ラーメン",
               selected: false,
               rate: 0, // 陽キャ度
             },
             {
-              text: '焼肉',
+              text: "焼肉",
               selected: false,
               rate: 30, // 陽キャ度
             },
             {
-              text: '寿司',
+              text: "寿司",
               selected: false,
               rate: 15, // 陽キャ度
             },
