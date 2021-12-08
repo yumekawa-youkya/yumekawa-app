@@ -36,19 +36,31 @@
         人生がさぞ楽しいことでしょう。その楽しさをぜひ皆に分け与えてください。
       </div>
     </div>
-    <div class="restart">
-      <button v-on:click="youkyadoreset()">
-        <router-link to="/select/0">もう一度診断する</router-link>
-      </button>
-    </div>
-    <div class="ranking">
-      <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
-      <input type="text" class="inputText" v-model="inputName" /><input
-        type="button"
-        value="追加"
-        class="addButton"
-        v-on:click="rankingButton"
-      />
+    <div class="under">
+      <div class="restart">
+        <button class="restartButton" v-on:click="youkyadoreset()">
+          <router-link to="/select/0">もう一度診断する</router-link>
+        </button>
+      </div>
+      <div class="home">
+        <button class="homeButton" v-on:click="youkyadoreset()">
+          <router-link to="/index">ホームに戻る</router-link>
+        </button>
+      </div>
+      <div class="rank">
+        <button class="rankButton">
+          <router-link to="/ranking">ランキング</router-link>
+        </button>
+      </div>
+      <div class="ranking">
+        <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
+        <input type="text" class="inputText" v-model="inputName" /><input
+          type="button"
+          value="追加"
+          class="addButton"
+          v-on:click="rankingButton"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -169,26 +181,80 @@ export default {
   font-size: 30px;
   font-family: "Kaisei Decol", serif;
 }
-.restart {
-  position: absolute;
+.restartButton {
   top: 790px;
   right: 100px;
+  margin: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "DotGothic16", sans-serif;
   color: gold;
   background-color: rgb(104, 86, 86);
   border-radius: 50vh;
   height: 5rem;
-  width: 20rem;
+  width: 15rem;
   transition: 0.2s;
 }
-.restart:hover {
+.restartButton:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
 }
+
+.homeButton {
+  top: 790px;
+  right: 100px;
+  display: flex;
+  margin: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-family: "DotGothic16", sans-serif;
+  color: gold;
+  background-color: rgb(104, 86, 86);
+  border-radius: 50vh;
+  height: 5rem;
+  width: 15rem;
+  transition: 0.2s;
+}
+.homeButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
+.rankButton {
+  top: 790px;
+  right: 100px;
+  display: flex;
+  margin: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-family: "DotGothic16", sans-serif;
+  color: gold;
+  background-color: rgb(104, 86, 86);
+  border-radius: 50vh;
+  height: 5rem;
+  width: 15rem;
+  transition: 0.2s;
+}
+.rankButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+.under {
+  display: flex;
+  justify-content: center;
+}
 .ranking {
+  margin: 40px;
+}
+.rankingComment {
+  font-family: "Kaisei Decol", serif;
+  font-size: 20px;
+}
+.inputText {
+  margin-top: 20px;
 }
 </style>

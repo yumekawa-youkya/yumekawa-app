@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/select">Select</router-link> |
+      <router-link to="/index">Home</router-link> |
+      <router-link to="/select/0">Select</router-link> |
       <router-link to="/result">Result</router-link> |
       <router-link to="/ranking">Ranking</router-link>
     </div>
@@ -73,6 +73,27 @@ export default {
             },
             {
               text: "寿司",
+              selected: false,
+              rate: 15, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 3,
+          question: "あなたがもらうとうれしい花束は？",
+          answer: [
+            {
+              text: "バラ",
+              selected: false,
+              rate: 30, // 陽キャ度
+            },
+            {
+              text: "チューリップ",
+              selected: false,
+              rate: 0, // 陽キャ度
+            },
+            {
+              text: "ガーベラ",
               selected: false,
               rate: 15, // 陽キャ度
             },
