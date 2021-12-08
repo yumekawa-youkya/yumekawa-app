@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="top">
-    <div class="resultTitle">Result</div>
-    <div class="resultComment">あなたの陽キャ度は...</div>
-    <div class="Youkyado">{{ totalYoukyado }}</div>
-    <div class="bunmatsu">です！！！</div>
+      <div class="resultTitle">Result</div>
+      <div class="resultComment">あなたの陽キャ度は...</div>
+      <div class="Youkyado">{{ totalYoukyado }}</div>
+      <div class="bunmatsu">です！！！</div>
     </div>
     <div v-if="this.totalYoukyado <= 20" class="result">
       ほとんど陰キャ！
@@ -41,15 +41,15 @@
         <router-link to="/select/0">もう一度診断する</router-link>
       </button>
     </div>
-  <div class="ranking">
-    <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
-    <input type="text" class="inputText" v-model="inputName" /><input
-      type="button"
-      value="追加"
-      class="addButton"
-      v-on:click="rankingButton"
-    />
-  </div>
+    <div class="ranking">
+      <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
+      <input type="text" class="inputText" v-model="inputName" /><input
+        type="button"
+        value="追加"
+        class="addButton"
+        v-on:click="rankingButton"
+      />
+    </div>
   </div>
 </template>
 
@@ -119,9 +119,9 @@ export default {
   border-radius: 10vh;
 }
 .resultTitle {
-  color: #FFF;
+  color: #fff;
   height: 20px;
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
   padding-top: 30px;
   font-size: 40px;
   font-weight: bold;
@@ -131,27 +131,27 @@ export default {
   align-items: left;
   padding: 40px;
   text-align: left;
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
   font-size: 30px;
-  color: #FFF;
+  color: #fff;
 }
 .Youkyado {
   padding-bottom: 40px;
   height: 10rem;
-  color: #FFF;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Rampart One', cursive;
+  font-family: "Rampart One", cursive;
   font-size: 200px;
   font-weight: bold;
 }
 .bunmatsu {
   padding: 40px;
   text-align: right;
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
   font-size: 30px;
-  color: #FFF;
+  color: #fff;
 }
 .result {
   height: 180px;
@@ -160,14 +160,14 @@ export default {
   font-size: 50px;
   color: red;
   text-align: center;
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
   border: solid 9px #000000;
 }
 .sentence {
   color: black;
   text-align: center;
   font-size: 30px;
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
 }
 .restart {
   position: absolute;
@@ -177,19 +177,18 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   color: gold;
-  background-color:rgb(104, 86, 86);
+  background-color: rgb(104, 86, 86);
   border-radius: 50vh;
   height: 5rem;
   width: 20rem;
   transition: 0.2s;
 }
 .restart:hover {
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
 }
 .ranking {
-
 }
 </style>
