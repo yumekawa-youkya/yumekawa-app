@@ -159,6 +159,7 @@ export default {
   font-family: "Times New Roman", serif;
   font-weight: bold;
   background-color: #c47222;
+}
 .rank {
   margin: 20px;
   height: 40px;
