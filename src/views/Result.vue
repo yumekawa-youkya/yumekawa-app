@@ -6,34 +6,52 @@
       <div class="Youkyado">{{ totalYoukyado }}</div>
       <div class="bunmatsu">です！！！</div>
     </div>
-    <div v-if="this.totalYoukyado <= 20" class="result">
-      ほとんど陰キャ！
-      <div class="sentence">
+    <div v-if="this.totalYoukyado == 0" class="result">
+      卍陰キャ神卍
+      <div div class="sentence">
+        文句なしの０点。人生楽しいですか？つらくないですか？
+      </div>
+    </div>
+    <div v-else-if="this.totalYoukyado <= 50" class="result">
+      ただの陰キャ！
+      <div div class="sentence">
         あなたはもう救いようのない陰キャです。あきらめましょう。
       </div>
     </div>
-    <div v-else-if="this.totalYoukyado <= 40" class="result">
+    <div v-else-if="this.totalYoukyado <= 100" class="result">
+      ほとんど陰キャ！
+      <div div class="sentence">
+        なんの変哲もない普通の陰キャです。人生いいことありますよ。
+      </div>
+    </div>
+    <div v-else-if="this.totalYoukyado <= 150" class="result">
       ちょっと陽キャ！
       <div class="sentence">
         あなたはまだまだ陽キャとはほど遠い存在です。精進しましょう。
       </div>
     </div>
-    <div v-else-if="this.totalYoukyado <= 60" class="result">
+    <div v-else-if="this.totalYoukyado <= 200" class="result">
       まあまあ陽キャ！
       <div class="sentence">
         あなたは言っても平凡です。何もかもが普通でつまらないでしょう。
       </div>
     </div>
-    <div v-else-if="this.totalYoukyado <= 80" class="result">
+    <div v-else-if="this.totalYoukyado <= 250" class="result">
       かなりの陽キャ！
       <div class="sentence">
         完全なる陽キャにギリギリなれない惜しい人です。中途半端はやめましょう。
       </div>
     </div>
-    <div v-else-if="this.totalYoukyado > 80" class="result">
+    <div v-else-if="this.totalYoukyado < 300" class="result">
       完全なる陽キャ！
       <div class="sentence">
         人生がさぞ楽しいことでしょう。その楽しさをぜひ皆に分け与えてください。
+      </div>
+    </div>
+    <div v-else-if="this.totalYoukyado == 300" class="result">
+      卍陽キャ神卍
+      <div class="sentence">
+        文句なしの満点。もはや陽キャの神。崇め奉らせてください。
       </div>
     </div>
     <div class="under">
