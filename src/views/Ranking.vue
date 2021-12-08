@@ -2,7 +2,6 @@
   <div class="app">
     <div>〜陽キャ度ランキング〜</div>
     <div>
-      <!--v-for="(ranking, index) in rankings" :key="ranking.id"-->
       <div class="rank">
         1位 : {{ rankings[0].name }}>>>{{ rankings[0].youkyado }}
       </div>
@@ -35,7 +34,7 @@
       </div>
     </div>
     <div>あなたの得点</div>
-    <div>{{ myScore.name }}>>>{{ myScore.youkyado }}</div>
+    <div class="youkyado">{{ this.totalYoukyado }}</div>
   </div>
 </template>
 
@@ -46,45 +45,56 @@ export default {
   data() {
     return {
       rankings: [],
-      myScore: [],
     }
+  },
+  props: {
+    questions: {
+      type: Array,
+      required: true,
+    },
   },
   methods: {},
   created() {
     firebase
       .firestore()
       .collection("ranking")
-      .orderBy("createdAt", "desc")
-      .limit(1)
+      .orderBy("youkyado", "desc")
+      .limit(10)
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
-          this.myScore.push({
+          this.rankings.push({
             id: doc.id,
             ...doc.data(),
           })
         })
-      }),
-      firebase
-        .firestore()
-        .collection("ranking")
-        .orderBy("youkyado", "desc")
-        .limit(10)
-        .get()
-        .then((snapshot) => {
-          snapshot.docs.forEach((doc) => {
-            this.rankings.push({
-              id: doc.id,
-              ...doc.data(),
-            })
-          })
-        })
+      })
+  },
+  computed: {
+    totalYoukyado: function () {
+      let youkyadoCmp = 0
+      for (let i = 0; i < this.questions.length; i++) {
+        if (this.questions[i].answer[0].selected === true) {
+          youkyadoCmp += this.questions[i].answer[0].rate
+        }
+        if (this.questions[i].answer[1].selected === true) {
+          youkyadoCmp += this.questions[i].answer[1].rate
+        }
+        if (this.questions[i].answer[2].selected === true) {
+          youkyadoCmp += this.questions[i].answer[2].rate
+        }
+      }
+      return youkyadoCmp
+    },
   },
 }
 </script>
 
 <style scoped>
 .rank {
+  margin: 20px;
+}
+.youkyado {
   margin: 20px;
 }
 </style>
