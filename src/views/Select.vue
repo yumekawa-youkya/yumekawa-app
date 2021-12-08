@@ -1,24 +1,29 @@
 <template>
   <div>
     <div v-for="(question, index) in questions" v-bind:key="index">
-      <div v-if="question.id == $route.params.id">
-        <div class="question">
-          <span>Question{{ Number($route.params.id) + 1 }}</span>
-          <div class="Text">{{ question.question }}</div>
+      <transition name="fade" mode="out-in">
+        <div v-if="question.id == $route.params.id">
+          <div class="question">
+            <span class="questionBox"
+              >Question{{ Number($route.params.id) + 1 }}</span
+            >
+            <div class="Text">{{ question.question }}</div>
+          </div>
+          <div class="btns">
+            <button class="btn1" v-on:click="Answer(index, 0)">
+              {{ question.answer[0].text }}
+            </button>
+            <button class="btn2" v-on:click="Answer(index, 1)">
+              {{ question.answer[1].text }}
+            </button>
+            <button class="btn3" v-on:click="Answer(index, 2)">
+              {{ question.answer[2].text }}
+            </button>
+          </div>
         </div>
-        <div class="btns">
-          <button class="btn1" v-on:click="Answer(index, 0)">
-            {{ question.answer[0].text }}
-          </button>
-          <button class="btn2" v-on:click="Answer(index, 1)">
-            {{ question.answer[1].text }}
-          </button>
-          <button class="btn3" v-on:click="Answer(index, 2)">
-            {{ question.answer[2].text }}
-          </button>
-        </div>
-      </div>
+      </transition>
     </div>
+    <div class="back"></div>
   </div>
 </template>
 
@@ -35,6 +40,7 @@ export default {
     return {
       tempQuestions: this.questions,
       total: 0,
+      show: false,
     }
   },
 
@@ -63,11 +69,97 @@ export default {
 </script>
 
 <style scoped>
+.fade-enter {
+  transform: translate(-100px, 0);
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+
+.fade-enter-active {
+  transition: all 3s 0s ease;
+}
+
+.fade-leave {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.fade-leave-to {
+  transform: translate(100px, 0);
+  opacity: 0;
+}
+.fade-leave-active {
+  transition: all 0.3s 0s ease;
+}
+
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffe9a7;
+  opacity: 0.4;
+  z-index: -1;
+  background-image: repeating-linear-gradient(
+      45deg,
+      #ffc107 25%,
+      transparent 25%,
+      transparent 75%,
+      #ffc107 75%,
+      #ffc107
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #ffc107 25%,
+      #ffe9a7 25%,
+      #ffe9a7 75%,
+      #ffc107 75%,
+      #ffc107
+    );
+  background-position: 0 0, 20px 20px;
+  background-size: 40px 40px;
+}
+.question {
+  position: relative;
+  margin: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5em;
+  border: solid 3px #62c1ce;
+  height: 15ch;
+  width: 80%;
+  background-color: #fff;
+}
+.question .questionBox {
+  position: absolute;
+  display: inline-block;
+  font-family: "Kaisei Decol", serif;
+  top: -40px;
+  left: -3px;
+  padding: 0 9px;
+  height: 40px;
+  width: 10ch;
+  line-height: 32px;
+  font-size: 25px;
+  background: #62c1ce;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+.question .Text {
+  text-align: center;
+  font-family: "DotGothic16", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+}
+
 .btn1 {
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-right: 10px;
-  margin-left: 10px;
+  font-size: 20px;
+  margin: 50px;
+  padding: 10px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -98,10 +190,9 @@ export default {
   border-left: 4px solid #0a5f4a;
 }
 .btn2 {
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-right: 10px;
-  margin-left: 10px;
+  font-size: 20px;
+  margin: 50px;
+  padding: 10px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -133,10 +224,9 @@ export default {
 }
 
 .btn3 {
-  margin-top: 15px;
-  margin-bottom: 30px;
-  margin-right: 10px;
-  margin-left: 10px;
+  font-size: 20px;
+  margin: 50px;
+  padding: 10px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;

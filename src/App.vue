@@ -17,64 +17,64 @@ export default {
       questions: [
         {
           id: 0,
-          question: "カレーとうんちの見分けはつく?",
+          question: "集合写真の立ち位置はどうする？",
           answer: [
             {
-              text: "はい",
+              text: "中央と両隅以外",
               selected: false,
-              rate: 50, // 陽キャ度
+              rate: 0, // 陽キャ度
             },
             {
-              text: "いいえ",
+              text: "両隅らへん",
               selected: false,
-              rate: 25, // 陽キャ度
+              rate: 15, // 陽キャ度
             },
             {
-              text: "どっちでもない",
+              text: "後列の中央",
               selected: false,
-              rate: 10, // 陽キャ度
+              rate: 30, // 陽キャ度
             },
           ],
         },
         {
           id: 1,
-          question: "カレーとうんちの見分けはつく?",
+          question: "ものを選ぶときに何を基準にする？",
           answer: [
             {
-              text: "はい",
+              text: "デザイン",
               selected: false,
-              rate: 50, // 陽キャ度
+              rate: 30, // 陽キャ度
             },
             {
-              text: "いいえ",
+              text: "機能性",
               selected: false,
-              rate: 25, // 陽キャ度
+              rate: 0, // 陽キャ度
             },
             {
-              text: "どっちでもない",
+              text: "レビュー",
               selected: false,
-              rate: 10, // 陽キャ度
+              rate: 15, // 陽キャ度
             },
           ],
         },
         {
           id: 2,
-          question: "カレーとうんちの見分けはつく?",
+          question: "好きな食べ物は？",
           answer: [
             {
-              text: "はい",
+              text: "ラーメン",
               selected: false,
-              rate: 50, // 陽キャ度
+              rate: 0, // 陽キャ度
             },
             {
-              text: "いいえ",
+              text: "焼肉",
               selected: false,
-              rate: 25, // 陽キャ度
+              rate: 30, // 陽キャ度
             },
             {
-              text: "どっちでもない",
+              text: "寿司",
               selected: false,
-              rate: 10, // 陽キャ度
+              rate: 15, // 陽キャ度
             },
           ],
         },
