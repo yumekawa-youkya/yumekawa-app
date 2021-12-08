@@ -101,7 +101,7 @@ export default {
         },
         {
           id: 4,
-          question: "ベンチに座って休憩いるのは？",
+          question: "ベンチに座って休憩しているのは？",
           answer: [
             {
               text: "50代ぐらいのサラリーマン",
