@@ -4,6 +4,9 @@
     <div class="main">
       <router-link to="/select/0" class="title">診断スタート</router-link>
     </div>
+    <div class="goRanking">
+      <router-link to="/ranking" class="rankingTitle">ランキング</router-link>
+    </div>
     <div class="images">
       <img class="image1" src="../assets/seijin.png" />
       <img class="image2" src="../assets/mild.png" />
@@ -22,14 +25,12 @@ export default {
 </script>
 
 <style scoped>
-
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&family=Yuji+Mai&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&family=Yuji+Mai&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap");
 
 .test {
   font-size: 80px;
@@ -45,7 +46,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 67px;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   color: rgb(241, 241, 241);
   background-color: #000000;
   border-radius: 50vh;
@@ -54,7 +55,7 @@ export default {
   transition: 0.3s;
 }
 .title:hover {
-  background-color:rgb(255, 31, 31);
+  background-color: rgb(255, 31, 31);
   color: rgb(255, 255, 255);
 }
 .main {
@@ -63,9 +64,33 @@ export default {
   justify-content: center;
   margin-top: 60px;
 }
+
+.goRanking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+.rankingTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 67px;
+  font-family: "DotGothic16", sans-serif;
+  color: rgb(241, 241, 241);
+  background-color: #000000;
+  border-radius: 50vh;
+  height: 10vh;
+  width: 30rem;
+  transition: 0.3s;
+}
+.rankingTitle:hover {
+  background-color: rgb(255, 31, 31);
+  color: rgb(255, 255, 255);
+}
 .general {
   background-image: url("../assets/club.png");
-  height: 800px;
+  height: 100vh;
   width: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -79,8 +104,8 @@ export default {
   width: 25rem;
   position: absolute;
   padding: 20px;
-  left: 140px;
-  top: 400px;
+  left: 350px;
+  top: 530px;
   transform: rotateZ(-10deg);
 }
 .image2 {
@@ -88,7 +113,7 @@ export default {
   width: 15rem;
   position: absolute;
   padding: 20px;
-  left: 880px;
+  left: 1200px;
   top: 200px;
   transform: rotateZ(5deg);
 }
@@ -97,8 +122,8 @@ export default {
   width: 15rem;
   position: absolute;
   padding: 20px;
-  left: 620px;
-  top: 500px;
+  left: 880px;
+  top: 600px;
   transform: rotateZ(3deg);
 }
 </style>
