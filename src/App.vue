@@ -99,11 +99,138 @@ export default {
             },
           ],
         },
+        {
+          id: 4,
+          question: "ベンチに座って休憩いるのは？",
+          answer: [
+            {
+              text: "50代ぐらいのサラリーマン",
+              selected: false,
+              rate: 0, // 陽キャ度
+            },
+            {
+              text: "赤ちゃんを抱いたママ",
+              selected: false,
+              rate: 15, // 陽キャ度
+            },
+            {
+              text: "高校生カップル",
+              selected: false,
+              rate: 30, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 5,
+          question: "ズバリ！おでんの具といえばどれ？",
+          answer: [
+            {
+              text: "卵",
+              selected: false,
+              rate: 30, // 陽キャ度
+            },
+            {
+              text: "こんにゃく",
+              selected: false,
+              rate: 0, // 陽キャ度
+            },
+            {
+              text: "大根",
+              selected: false,
+              rate: 15, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 6,
+          question: "秋のシーズンであなたが食べたいものはどれ？",
+          answer: [
+            {
+              text: "サンマ",
+              selected: false,
+              rate: 15, // 陽キャ度
+            },
+            {
+              text: "栗",
+              selected: false,
+              rate: 30, // 陽キャ度
+            },
+            {
+              text: "松茸",
+              selected: false,
+              rate: 0, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 7,
+          question: "次のオバケのうち、一番怖いと感じるのはどれ？",
+          answer: [
+            {
+              text: "獣人",
+              selected: false,
+              rate: 30, // 陽キャ度
+            },
+            {
+              text: "骸骨",
+              selected: false,
+              rate: 0, // 陽キャ度
+            },
+            {
+              text: "吸血鬼",
+              selected: false,
+              rate: 15, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 8,
+          question: "「純」という漢字で熟語を作るなら？",
+          answer: [
+            {
+              text: "「純粋」",
+              selected: false,
+              rate: 30, // 陽キャ度
+            },
+            {
+              text: "「純情」",
+              selected: false,
+              rate: 15, // 陽キャ度
+            },
+            {
+              text: "「純金」",
+              selected: false,
+              rate: 0, // 陽キャ度
+            },
+          ],
+        },
+        {
+          id: 9,
+          question:
+            "あなたは森の中で迷ってしまいました。これからどうしますか？",
+          answer: [
+            {
+              text: "来た道を戻る",
+              selected: false,
+              rate: 15, // 陽キャ度
+            },
+            {
+              text: "水と食糧の確保",
+              selected: false,
+              rate: 30, // 陽キャ度
+            },
+            {
+              text: "スマホで位置を把握",
+              selected: false,
+              rate: 0, // 陽キャ度
+            },
+          ],
+        },
       ],
-    };
+    }
   },
   methods: {},
-};
+}
 </script>
 
 <style>
