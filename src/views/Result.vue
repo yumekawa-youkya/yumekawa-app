@@ -56,19 +56,20 @@
     </div>
     <div class="under">
       <div class="restart">
-        <button class="restartButton" v-on:click="youkyadoreset()">
-          <router-link to="/select/0">もう一度診断する</router-link>
-        </button>
+        <router-link
+          to="/select/0"
+          class="restartButton"
+          v-on:click="youkyadoreset()"
+          >もう一度診断する</router-link
+        >
       </div>
       <div class="home">
-        <button class="homeButton" v-on:click="youkyadoreset()">
-          <router-link to="/index">ホームに戻る</router-link>
-        </button>
+        <router-link to="/index" class="homeButton" v-on:click="youkyadoreset()"
+          >ホームに戻る</router-link
+        >
       </div>
       <div class="rank">
-        <button class="rankButton">
-          <router-link to="/ranking">ランキング</router-link>
-        </button>
+        <router-link to="/ranking" class="rankButton">ランキング</router-link>
       </div>
       <div class="ranking">
         <div class="rankingComment">名前を入力してランキングに追加しよう！</div>
@@ -84,7 +85,7 @@
 </template>
 
 <script>
-import firebase from "firebase"
+import firebase from 'firebase';
 export default {
   props: {
     questions: {
@@ -94,8 +95,8 @@ export default {
   },
   data() {
     return {
-      inputName: "",
-    }
+      inputName: '',
+    };
   },
   methods: {
     rankingButton: function () {
@@ -103,42 +104,42 @@ export default {
         name: this.inputName,
         youkyado: this.totalYoukyado,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      }
-      firebase.firestore().collection("ranking").add(data)
-      this.inputName = ""
+      };
+      firebase.firestore().collection('ranking').add(data);
+      this.inputName = '';
     },
     youkyadoreset: function () {
       for (let i = 0; i < this.questions.length; i++) {
         if (this.questions[i].answer[0].selected === true) {
-          this.questions[i].answer[0].selected = false
+          this.questions[i].answer[0].selected = false;
         }
         if (this.questions[i].answer[1].selected === true) {
-          this.questions[i].answer[1].selected = false
+          this.questions[i].answer[1].selected = false;
         }
         if (this.questions[i].answer[2].selected === true) {
-          this.questions[i].answer[2].selected = false
+          this.questions[i].answer[2].selected = false;
         }
       }
     },
   },
   computed: {
     totalYoukyado: function () {
-      let youkyadoCmp = 0
+      let youkyadoCmp = 0;
       for (let i = 0; i < this.questions.length; i++) {
         if (this.questions[i].answer[0].selected === true) {
-          youkyadoCmp += this.questions[i].answer[0].rate
+          youkyadoCmp += this.questions[i].answer[0].rate;
         }
         if (this.questions[i].answer[1].selected === true) {
-          youkyadoCmp += this.questions[i].answer[1].rate
+          youkyadoCmp += this.questions[i].answer[1].rate;
         }
         if (this.questions[i].answer[2].selected === true) {
-          youkyadoCmp += this.questions[i].answer[2].rate
+          youkyadoCmp += this.questions[i].answer[2].rate;
         }
       }
-      return youkyadoCmp
+      return youkyadoCmp;
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -151,7 +152,7 @@ export default {
 .resultTitle {
   color: #fff;
   height: 20px;
-  font-family: "Kaisei Decol", serif;
+  font-family: 'Kaisei Decol', serif;
   padding-top: 30px;
   font-size: 40px;
   font-weight: bold;
@@ -161,7 +162,7 @@ export default {
   align-items: left;
   padding: 40px;
   text-align: left;
-  font-family: "Kaisei Decol", serif;
+  font-family: 'Kaisei Decol', serif;
   font-size: 30px;
   color: #fff;
 }
@@ -172,14 +173,14 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Rampart One", cursive;
+  font-family: 'Rampart One', cursive;
   font-size: 200px;
   font-weight: bold;
 }
 .bunmatsu {
   padding: 40px;
   text-align: right;
-  font-family: "Kaisei Decol", serif;
+  font-family: 'Kaisei Decol', serif;
   font-size: 30px;
   color: #fff;
 }
@@ -190,14 +191,14 @@ export default {
   font-size: 50px;
   color: red;
   text-align: center;
-  font-family: "Kaisei Decol", serif;
+  font-family: 'Kaisei Decol', serif;
   border: solid 9px #000000;
 }
 .sentence {
   color: black;
   text-align: center;
   font-size: 30px;
-  font-family: "Kaisei Decol", serif;
+  font-family: 'Kaisei Decol', serif;
 }
 .restartButton {
   top: 790px;
@@ -207,7 +208,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 25px;
-  font-family: "DotGothic16", sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   color: gold;
   background-color: rgb(104, 86, 86);
   border-radius: 50vh;
@@ -228,7 +229,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 25px;
-  font-family: "DotGothic16", sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   color: gold;
   background-color: rgb(104, 86, 86);
   border-radius: 50vh;
@@ -249,7 +250,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 25px;
-  font-family: "DotGothic16", sans-serif;
+  font-family: 'DotGothic16', sans-serif;
   color: gold;
   background-color: rgb(104, 86, 86);
   border-radius: 50vh;
@@ -264,15 +265,33 @@ export default {
 .under {
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 .ranking {
-  margin: 40px;
+  margin: 10px;
 }
 .rankingComment {
-  font-family: "Kaisei Decol", serif;
+  font-family: 'Kaisei Decol', serif;
   font-size: 20px;
 }
-.inputText {
-  margin-top: 20px;
+.addButton {
+  top: 790px;
+  right: 100px;
+  margin-left: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-family: 'DotGothic16', sans-serif;
+  color: gold;
+  background-color: rgb(104, 86, 86);
+  border-radius: 50vh;
+  height: 3rem;
+  width: 12rem;
+  transition: 0.2s;
+}
+.addButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
 }
 </style>

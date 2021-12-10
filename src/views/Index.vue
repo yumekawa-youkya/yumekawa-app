@@ -18,23 +18,23 @@
 <script>
 export default {
   data() {
-    return {}
+    return {};
   },
   methods: {},
-}
+};
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&family=Yuji+Mai&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&family=Rampart+One&family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kaisei+Decol&family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=New+Tegomin&display=swap');
 
 .test {
   font-size: 80px;
-  font-family: "Kaisei Decol", serif;
+  font-family: 'Kaisei Decol', serif;
   /* margin-top: 10px; */
   margin-bottom: 50px;
   padding-top: 30px;
@@ -46,8 +46,8 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 67px;
-  font-family: "DotGothic16", sans-serif;
-  color: rgb(241, 241, 241);
+  font-family: 'DotGothic16', sans-serif;
+  color: gold;
   background-color: #000000;
   border-radius: 50vh;
   height: 10vh;
@@ -76,8 +76,8 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 67px;
-  font-family: "DotGothic16", sans-serif;
-  color: rgb(241, 241, 241);
+  font-family: 'DotGothic16', sans-serif;
+  color: gold;
   background-color: #000000;
   border-radius: 50vh;
   height: 10vh;
@@ -89,7 +89,7 @@ export default {
   color: rgb(255, 255, 255);
 }
 .general {
-  background-image: url("../assets/club.png");
+  background-image: url('../assets/club.png');
   height: 100vh;
   width: auto;
   background-repeat: no-repeat;
@@ -100,21 +100,21 @@ export default {
   flex-direction: column;
 }
 .image1 {
-  height: 20rem;
-  width: 25rem;
+  height: 15rem;
+  width: 20rem;
   position: absolute;
   padding: 20px;
-  left: 350px;
-  top: 530px;
+  left: 90px;
+  top: 550px;
   transform: rotateZ(-10deg);
 }
 .image2 {
-  height: 30rem;
-  width: 15rem;
+  height: 20rem;
+  width: 10rem;
   position: absolute;
   padding: 20px;
-  left: 1200px;
-  top: 200px;
+  left: 900px;
+  top: 290px;
   transform: rotateZ(5deg);
 }
 .image3 {
@@ -122,7 +122,7 @@ export default {
   width: 15rem;
   position: absolute;
   padding: 20px;
-  left: 880px;
+  left: 600px;
   top: 600px;
   transform: rotateZ(3deg);
 }
