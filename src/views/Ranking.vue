@@ -110,9 +110,6 @@ export default {
 </script>
 
 <style scoped>
-.app {
-  border: dotted;
-}
 .homeButton {
   margin: 40px;
   align-items: center;
