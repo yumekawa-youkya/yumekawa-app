@@ -37,7 +37,7 @@
     <div class="youkyado">{{ this.totalYoukyado }}</div>
     <div class="home">
       <button class="homeButton" v-on:click="youkyadoreset()">
-        <router-link to="/index">ホームに戻る</router-link>
+        <router-link to="/">ホームに戻る</router-link>
       </button>
     </div>
   </div>
@@ -110,6 +110,9 @@ export default {
 </script>
 
 <style scoped>
+.app {
+  border: dotted;
+}
 .homeButton {
   margin: 40px;
   align-items: center;
@@ -128,11 +131,13 @@ export default {
   background-color: rgb(0, 0, 0);
 }
 .title {
+  border: dotted;
   font-size: 80px;
-  padding: 20px;
+  padding: 30px;
   font-family: "Kaisei Decol", serif;
 }
 .rank1 {
+  border: dotted;
   position: relative;
   display: center;
   height: 70px;
@@ -144,6 +149,7 @@ export default {
   background-color: gold;
 }
 .rank2 {
+  border: dotted;
   height: 70px;
   width: 100%;
   font-size: 25px;
@@ -153,6 +159,7 @@ export default {
   background-color: silver;
 }
 .rank3 {
+  border: dotted;
   height: 70px;
   width: 100%;
   font-size: 25px;
@@ -172,16 +179,20 @@ export default {
   background-color: #f0d0b6;
 }
 .comment {
+  border: dotted;
   height: 70px;
   width: 100%;
+  padding-top: 25px;
   font-size: 25px;
   font-weight: bold;
   font-family: "Kaisei Decol", serif;
   background-color: lightblue;
 }
 .youkyado {
+  border: dotted;
   height: 70px;
   width: 100%;
+  padding-top: 25px;
   font-size: 25px;
   border: dotted;
   font-weight: bold;
@@ -189,6 +200,7 @@ export default {
   background-color: skyblue;
 }
 .homeButton {
+  border: dotted;
   height: 70px;
   width: 80%;
   font-size: 25px;
