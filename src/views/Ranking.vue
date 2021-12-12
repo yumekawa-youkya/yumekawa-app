@@ -33,7 +33,7 @@
         10位 : {{ rankings[9].name }}>>>{{ rankings[9].youkyado }}
       </div>
     </div>
-    <div>あなたの得点</div>
+    <div class="comment">あなたの得点</div>
     <div class="youkyado">{{ this.totalYoukyado }}</div>
     <div class="home">
       <button class="homeButton" v-on:click="youkyadoreset()">
@@ -44,13 +44,13 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import firebase from "firebase"
 
 export default {
   data() {
     return {
       rankings: [],
-    };
+    }
   },
   props: {
     questions: {
@@ -62,13 +62,13 @@ export default {
     youkyadoreset: function () {
       for (let i = 0; i < this.questions.length; i++) {
         if (this.questions[i].answer[0].selected === true) {
-          this.questions[i].answer[0].selected = false;
+          this.questions[i].answer[0].selected = false
         }
         if (this.questions[i].answer[1].selected === true) {
-          this.questions[i].answer[1].selected = false;
+          this.questions[i].answer[1].selected = false
         }
         if (this.questions[i].answer[2].selected === true) {
-          this.questions[i].answer[2].selected = false;
+          this.questions[i].answer[2].selected = false
         }
       }
     },
@@ -76,8 +76,8 @@ export default {
   created() {
     firebase
       .firestore()
-      .collection('ranking')
-      .orderBy('youkyado', 'desc')
+      .collection("ranking")
+      .orderBy("youkyado", "desc")
       .limit(10)
       .get()
       .then((snapshot) => {
@@ -85,28 +85,28 @@ export default {
           this.rankings.push({
             id: doc.id,
             ...doc.data(),
-          });
-        });
-      });
+          })
+        })
+      })
   },
   computed: {
     totalYoukyado: function () {
-      let youkyadoCmp = 0;
+      let youkyadoCmp = 0
       for (let i = 0; i < this.questions.length; i++) {
         if (this.questions[i].answer[0].selected === true) {
-          youkyadoCmp += this.questions[i].answer[0].rate;
+          youkyadoCmp += this.questions[i].answer[0].rate
         }
         if (this.questions[i].answer[1].selected === true) {
-          youkyadoCmp += this.questions[i].answer[1].rate;
+          youkyadoCmp += this.questions[i].answer[1].rate
         }
         if (this.questions[i].answer[2].selected === true) {
-          youkyadoCmp += this.questions[i].answer[2].rate;
+          youkyadoCmp += this.questions[i].answer[2].rate
         }
       }
-      return youkyadoCmp;
+      return youkyadoCmp
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -115,7 +115,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 25px;
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   color: gold;
   background-color: rgb(104, 86, 86);
   border-radius: 50vh;
@@ -129,7 +129,8 @@ export default {
 }
 .title {
   font-size: 80px;
-  font-family: 'Kaisei Decol', serif;
+  padding: 20px;
+  font-family: "Kaisei Decol", serif;
 }
 .rank1 {
   position: relative;
@@ -137,47 +138,62 @@ export default {
   height: 70px;
   width: 100%;
   font-size: 25px;
+  padding-top: 25px;
   font-weight: bold;
-  font-family: 'Times New Roman', serif;
-  font-weight: bold;
+  font-family: "Times New Roman", serif;
   background-color: gold;
 }
 .rank2 {
-  height: 60px;
+  height: 70px;
   width: 100%;
   font-size: 25px;
+  padding-top: 25px;
   font-weight: bold;
-  font-family: 'Times New Roman', serif;
-  font-weight: bold;
+  font-family: "Times New Roman", serif;
   background-color: silver;
 }
 .rank3 {
-  height: 50px;
+  height: 70px;
   width: 100%;
   font-size: 25px;
+  padding-top: 25px;
   font-weight: bold;
-  font-family: 'Times New Roman', serif;
-  font-weight: bold;
+  font-family: "Times New Roman", serif;
   background-color: #c47222;
 }
 .rank {
-  margin: 20px;
-  height: 40px;
+  height: 70px;
   width: 100%;
   font-size: 25px;
+  padding-top: 25px;
+  border: dotted;
   font-weight: bold;
-  font-family: 'Kaisei Decol', serif;
-  font-weight: bold;
+  font-family: "Kaisei Decol", serif;
   background-color: #f0d0b6;
 }
-.youkyado {
-  margin: 20px;
-  height: 40px;
+.comment {
+  height: 70px;
   width: 100%;
   font-size: 25px;
   font-weight: bold;
-  font-family: 'Kaisei Decol', serif;
+  font-family: "Kaisei Decol", serif;
+  background-color: lightblue;
+}
+.youkyado {
+  height: 70px;
+  width: 100%;
+  font-size: 25px;
+  border: dotted;
   font-weight: bold;
+  font-family: "Kaisei Decol", serif;
   background-color: skyblue;
+}
+.homeButton {
+  height: 70px;
+  width: 80%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Kaisei Decol", serif;
+  background-color: lightblue;
 }
 </style>
