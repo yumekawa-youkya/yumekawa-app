@@ -123,7 +123,7 @@ export default {
 }
 .question {
   position: relative;
-  margin: 2em;
+  margin: 8em;
   margin-left: auto;
   margin-right: auto;
   padding-top: 5em;
