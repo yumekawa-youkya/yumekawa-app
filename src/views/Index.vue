@@ -90,8 +90,8 @@ export default {
 }
 .general {
   background-image: url("../assets/club.png");
-  height: 120vh;
-  width: auto;
+  height: 100vh;
+  width: 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -104,8 +104,8 @@ export default {
   width: 20rem;
   position: absolute;
   padding: 20px;
-  left: 90px;
-  top: 450px;
+  left: 300px;
+  top: 500px;
   transform: rotateZ(-10deg);
 }
 .image2 {
@@ -113,8 +113,8 @@ export default {
   width: 10rem;
   position: absolute;
   padding: 20px;
-  left: 900px;
-  top: 190px;
+  left: 1040px;
+  top: 450px;
   transform: rotateZ(5deg);
 }
 .image3 {
@@ -122,8 +122,8 @@ export default {
   width: 15rem;
   position: absolute;
   padding: 20px;
-  left: 600px;
-  top: 500px;
+  left: 700px;
+  top: 450px;
   transform: rotateZ(3deg);
 }
 </style>

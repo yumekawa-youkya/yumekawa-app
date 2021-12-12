@@ -143,9 +143,6 @@ export default {
 </script>
 
 <style scoped>
-.app {
-  border: dotted;
-}
 .top {
   background: -moz-linear-gradient(#ffb03c, #7d0c8b);
   background: -webkit-linear-gradient(#ffb03c, #ff708d);
